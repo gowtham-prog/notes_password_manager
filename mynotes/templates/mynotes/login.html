@@ -1,0 +1,41 @@
+{% extends "mynotes/layout.html" %}
+{% load static %}
+{% block body %}
+{% if message %}
+        <div>{{ message }}</div>
+{% endif %}
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+   
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <h2 class="text-center text-dark mt-5">Login Form</h2>
+            <div class="card my-4">
+                <div class="text-center">
+                  <img src="https://i.pinimg.com/736x/42/02/c6/4202c6cad35636add30132083cd96569.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                    width="200px" alt="profile">
+                </div>
+    
+                <div class="mb-3 col-md-6 offset-3 ">
+                  <input type="text" class="form-control" autofocus name="username" aria-describedby="emailHelp"
+                    placeholder="User Name">
+                </div>
+                <div class="mb-3 col-md-6 offset-3">
+                  <input type="password" class="form-control"  name="password" placeholder="password">
+                </div>
+                <div class="text-center"><button type="submit" class="btn btn-primary px-5 mb-5 w-90 ">Login</button></div>
+                <div id="emailHelp" class="form-text text-center mb-5 text-dark">Don't have an account? <a href="{% url 'register' %}" class="text-dark fw-bold"> Create an
+                    Account</a>
+                </div>
+              {% comment %} </form> {% endcomment %}
+            </div>
+    
+          </div>
+        </div>
+      </div>
+</form>
+
+{% comment %} Don't have an account? <a href="{% url 'register' %}">Register here.</a> {% endcomment %}
+
+{% endblock %}

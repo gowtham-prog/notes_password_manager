@@ -1,0 +1,16 @@
+{% extends "mynotes/layout.html" %}
+{% load static %}
+{% block header %}
+{% endblock %}
+{% block body %}
+<form action="{% url 'blogin' %}" method="post">
+       {% csrf_token %}  
+       <h3>email sent!!</h3>
+       <div class="mb-3 col-md-6 offset-3 ">
+              <input type="text" class="form-control" autofocus name="fpass" aria-describedby="emailHelp"
+                placeholder="Enter OTP">
+            </div>
+            <div class="text-center"><button type="submit" class="btn btn-primary px-5 mb-5 w-90 ">Login</button></div>
+       <h2>{{title}}</h2>
+</form>
+{% endblock %}

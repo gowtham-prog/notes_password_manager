@@ -1,0 +1,19 @@
+{% extends "mynotes/layout.html" %}
+{% load static %}
+{% block header %}
+            
+{% endblock %} 
+{% block body %}        
+            <!-- Features section-->
+            <a  class="btn btn-primary btn-lg px-4 me-sm-3"  href="{% url 'create_pwd' %}">create+</a>
+            <h4 style="text-align:center;">Passwords</h4>
+        
+        <h1>hello</h1>
+        <div >
+           <h5> {{a.Website}}</h5>
+           <h5> {{a.Username}}</h5>
+           <h5> {{g}}</h5>
+
+           <a  class="btn btn-primary btn-lg px-4 me-sm-3"  href="{% url 'delete' a.id %}">delete</a>
+       </div>&nbsp;
+{% endblock %}
