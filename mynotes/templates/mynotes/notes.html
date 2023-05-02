@@ -6,11 +6,11 @@
 {% block body %}        
             <!-- Features section-->
             <a  class="btn btn-primary btn-lg px-4 me-sm-3"  href="{% url 'create' %}">create+</a>
-            <h4 style="text-align:center;">MY NOTES</h4>
+            <h1 style="text-align:center;">MY NOTES</h1>
         {% for a in p %}
-        <h1>hello</h1>
+        <h5>note id : {{a.id}}</h5>
         <div >
-           <h3> {{a.Title}}</h3>
+           <h2> {{a.Title}}</h2>
            <h6><i>{{a.content}}</i></h6>
        </div>&nbsp;
        {% endfor %}
